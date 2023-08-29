@@ -1,0 +1,25 @@
+<%- include('partials/header'); -%>
+    
+
+<h1>Home</h1>
+
+    <p class="homeContent">
+        <%=homeStartContent%>
+    </p>
+    <div class="box">
+
+        <% posts.forEach(function(currentValue){%>
+            <h2 class="smallTitle">
+                <%=currentValue.name%>
+            </h2>
+            <p>
+                <%=currentValue.content.substring(0,200)+"....."%>
+                    <a href="/home/<%=currentValue.name%>">Read more</a>
+                    
+            </p>
+            <% })%>
+                <a href="/compose" class="btn composeButton btn-lg" style="margin-top: 5px;">Compose</a>
+    </div>
+
+
+    <%- include('partials/footer'); -%>
